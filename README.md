@@ -10,7 +10,7 @@ The content in the README is also available on [https://cch0.github.io/data-engi
 
 ## Goal
 
-The goal of this project is to create a solution which consists an end-to-end batch data ingestion, processing, transformation, persistence and visualization pipeline. With data ingested from National Weathr Service, user will be able to view the hourly temperature data in the report provided by Looker Studio.
+The goal of this project is to create a solution which consists an end-to-end batch data ingestion, processing, transformation, persistence and visualization pipeline. With data ingested from Hong Kong Observatory, user will be able to view the hourly temperature data in the report provided by Looker Studio.
 
 
 <br>
