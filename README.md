@@ -91,7 +91,7 @@ This includes building Cloud Storage bucket and BigQuery dataset using Terraform
 
 **Docker Container Creation**
 
-This includes building local Kestra iKestra as well as running Kestra and Postgres containers.
+This includes building local Kestra image as well as running Kestra and Postgres containers.
 
 
 [Kestra](./docs/Kestra.md)
