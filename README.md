@@ -17,7 +17,7 @@ The goal of this project is to create a solution which consists an end-to-end ba
 
 ## Data Source
 
-**National Weather Service**'s [API Web Service](https://www.weather.gov/documentation/services-web-api#/default/radar_station) provides various APIs where we can use to collect real time weather data.
+**Hong Kong Observatory**'s [API Web Service](https://data.gov.hk/tc-data/dataset/hk-hko-rss-current-weather-report/resource/83c9d433-2aa1-465d-96c7-460c78091bda) provides various APIs where we can use to collect real time weather data.
 
 A list of office ids were previously obtained and hard-coded in the data collection Python script (see [weather_data_load.py](./src/weather_data_loader.py))
 
