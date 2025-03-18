@@ -30,7 +30,7 @@ variable "bq_dataset_name" {
 variable "gcs_bucket_name" {
   description = "Storage Bucket Name"
   #Update the below to a unique bucket name
-  default     = "data-engineering-zoomcamp-2024-project"
+  default     = "de-zoomcamp-2025-project"
 }
 
 variable "gcs_storage_class" {
