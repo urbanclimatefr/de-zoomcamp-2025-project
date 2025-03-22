@@ -84,6 +84,13 @@ This uses Python to run the transform script to change json output to csv output
 
 This task uploads the transformed csv data output to the GCS bucket.
 
+<br>
+
+**6. Create weather table** 
+
+<img width="510" alt="image" src="https://github.com/user-attachments/assets/65b020b2-51ba-457c-9ced-83b7dadd9913" />
+
+This tasks creates weather table in Bigquery with the desired data schema.
 
 
 
