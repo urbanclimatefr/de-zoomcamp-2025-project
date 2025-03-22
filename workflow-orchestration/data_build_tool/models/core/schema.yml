@@ -1,39 +1,24 @@
 version: 2
 
-models:
-  - name: weather_data
-    description: >
-      Table with place, value, unit, and recordTime fields.
-    columns:
-      - name: place
-        data_type: string
-        description: "The location or place associated with the record."
-        tests:
-          - not_null:
-              severity: error
-          - unique:
-              severity: warn
-
-      - name: value
-        data_type: float64
-        description: "The numerical value associated with the record."
-        tests:
-          - not_null:
-              severity: error
-
-      - name: unit
-        data_type: string
-        description: "The unit of measurement for the value."
-        tests:
-          - not_null:
-              severity: error
-          - accepted_values:
-              values: ["C"]  # Example accepted values, adjust as needed
-              severity: warn
-
-      - name: recordTime
-        data_type: datetime
-        description: "The timestamp when the record was created."
-        tests:
-          - not_null:
-              severity: error
+sources:
+  - name: your_source_name  # Replace with the name of your source
+    database: your_database # Replace with your database name (e.g., BigQuery project ID)
+    schema: your_schema     # Replace with your schema name (e.g., dataset name in BigQuery)
+    tables:
+      - name: weather_data  # The name of the source table
+        columns:
+          - name: place
+            tests:
+              - not_null
+              - unique
+          - name: value
+            tests:
+              - not_null
+          - name: unit
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['C', 'F']  # Example: Ensure unit is either 'C' or 'F'
+          - name: recordTime
+            tests:
+              - not_null
