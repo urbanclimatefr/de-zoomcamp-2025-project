@@ -20,12 +20,10 @@ This workflow is designed to set key-value pairs in a key-value store, which can
 <img width="536" alt="image" src="https://github.com/user-attachments/assets/9f2ca265-b2ba-4ab6-a814-fdd26d571b03" />
 
 
+The key value store is in namespaces zoomcamp.
 
-The fetched data will be finally stored as json file in Gloud Storage bucket named `data-engineering-zoomcamp-2024-project` and under the `raw` prefix indicating this is the raw data we collected.
+<img width="1217" alt="image" src="https://github.com/user-attachments/assets/21809b06-c4d9-4592-88f1-1b5a25fd5bc4" />
 
-The json file name is partitioned on year, month and day.
-
-![cloud storage raw](./storage_raw.png)
 
 
 <br>
