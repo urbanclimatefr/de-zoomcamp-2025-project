@@ -66,7 +66,7 @@ This task fetches data by using HTTP Get method.
 <br>
 
 
-**4. Parse json/ Transform** Data Exporter
+**4. Parse json/ Transform** 
 
 This uses Python to run the transform script to change json output to csv output with desired columns: place, value, unit, recordTime.
 
@@ -76,18 +76,14 @@ This uses Python to run the transform script to change json output to csv output
 
 <br>
 
-<br>
 
 
-**5. read back from bigquery and assert no dupes** Data Loader
-
-See [quality check](../mage/data-engineering-zoomcamp-2024-project/data_loaders/read_back_from_bigquery_and_assert_no_dupes.py)
-
-
-This data loader performs quality check by reading data from BigQuery table and make sure there is no duplicate rows in the table based on the same unique criteria described in **remove duplicates** transformer.
+**5. Upload data to Google Cloud Storage (GCS)** Data Loader
+<img width="365" alt="image" src="https://github.com/user-attachments/assets/0a1cca6a-233b-49dd-b167-8e119b261bbd" />
 
 
-![mage block 5](./mage_block_5.png)
+
+
 
 
 <br>
