@@ -60,3 +60,13 @@ description: |
       database: zoomcamp-project
       schema: zoomcamp
   ```
+
+triggers:
+- id: upstream_dependancy
+  type: io.kestra.plugin.core.trigger.Flow
+  preconditions:
+    id: fetch_weather_data
+    flows:
+      - namespace: kestra.sandbox
+        flowId: flow_a
+        states: [SUCCESS]
