@@ -1,23 +1,32 @@
 version: 2
 
 sources:
-  - name: zoomcamp-project-454404 # Replace with the name of your source
-    database: zoomcamp
+  - name: zoomcamp
+    database: zoomcamp-project-454404
+    schema: zoomcamp
     tables:
-      - name: weather_data  # The name of the source table
+      - name: weather_data
+        description: "Weather data table containing place, value, unit, and recordTime."
         columns:
           - name: place
+            description: "The location or place associated with the weather record."
             tests:
               - not_null
               - unique
+
           - name: value
+            description: "The numerical value associated with the weather record."
             tests:
               - not_null
+
           - name: unit
+            description: "The unit of measurement for the value (e.g., 'C' for Celsius or 'F' for Fahrenheit)."
             tests:
               - not_null
               - accepted_values:
-                  values: ['C', 'F']  # Example: Ensure unit is either 'C' or 'F'
+                  values: ['C', 'F']
+
           - name: recordTime
+            description: "The timestamp when the weather record was created."
             tests:
               - not_null
