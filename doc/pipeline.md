@@ -78,10 +78,11 @@ This uses Python to run the transform script to change json output to csv output
 
 
 
-**5. Upload data to Google Cloud Storage (GCS)** Data Loader
+**5. Upload data to Google Cloud Storage (GCS)** 
+
 <img width="365" alt="image" src="https://github.com/user-attachments/assets/0a1cca6a-233b-49dd-b167-8e119b261bbd" />
 
-
+This task uploads the transformed csv data output to the GCS bucket.
 
 
 
