@@ -66,12 +66,9 @@ This task fetches data by using HTTP Get method.
 <br>
 
 
-**4. store to big query** Data Exporter
+**4. Parse json/ Transform** Data Exporter
 
-See [store to big query](../mage/data-engineering-zoomcamp-2024-project/data_exporters/store_to_big_query.py)
-
-
-This data exporter uploads the dataframe to BigQuery dataset called `project_dataset` and table `weather_data`.
+This uses Python to run the transform script to change json output to csv output with desired columns: place, value, unit, recordTime.
 
 
 ![mage block 4](./mage_block_4.png)
