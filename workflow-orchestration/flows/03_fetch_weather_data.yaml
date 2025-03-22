@@ -1,0 +1,121 @@
+id: fetch_weather_data
+namespace: zoomcamp
+
+variables:
+  file: "transformed_data.csv"
+  gcs_file: "gs://{{ kv('GCP_BUCKET_NAME') }}/{{ vars.file }}"
+  table: "{{ kv('GCP_DATASET') }}._hko"
+  data: "{{ outputs.parse_json.outputFiles['transformed_data.csv'] }}"
+
+tasks:
+  - id: set_label
+    type: io.kestra.plugin.core.execution.Labels
+    labels:
+      file: "{{ render(vars.file) }}"
+      data_type: "weather"
+
+  - id: fetch_data
+    type: io.kestra.plugin.core.http.Request
+    uri: "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en"
+    method: GET
+
+  - id: parse_json
+    type: io.kestra.plugin.scripts.python.Script
+    inputFiles:
+      data.json: "{{ outputs.fetch_data.body }}"
+    beforeCommands:
+      - pip install pandas
+    outputFiles:
+      - transformed_data.csv
+    script: |
+      import json
+      import pandas as pd
+      from datetime import datetime
+
+      # Load the JSON data
+      with open("data.json", "r") as file:
+          json_data = json.load(file)
+
+      # Extract the temperature data and recordTime
+      temperature_data = json_data.get("temperature", {})
+      record_time = temperature_data.get("recordTime", "")
+      temperature_records = temperature_data.get("data", [])
+
+      # Convert recordTime to a valid timestamp format
+      try:
+          record_time = datetime.strptime(record_time, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d %H:%M:%S")
+      except ValueError:
+          # If the format is invalid, use a default timestamp
+          record_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+      # Add recordTime to each temperature record
+      for record in temperature_records:
+          record["recordTime"] = record_time
+
+      # Create a DataFrame
+      df = pd.DataFrame(temperature_records)
+
+      # Save the DataFrame to a CSV file
+      df.to_csv('transformed_data.csv', index=False)
+
+      # Output the DataFrame as a string for logging
+      print("Temperature Data with Record Time:")
+      print(df)
+
+  - id: upload_to_gcs
+    type: io.kestra.plugin.gcp.gcs.Upload
+    from: "{{ outputs.parse_json.outputFiles['transformed_data.csv'] }}"
+    to: "{{ render(vars.gcs_file) }}"
+    serviceAccount: "{{kv('GCP_CREDS')}}"
+
+  - id: create_weather_table
+    type: io.kestra.plugin.gcp.bigquery.Query
+    sql: |
+      CREATE TABLE IF NOT EXISTS `{{ kv('GCP_PROJECT_ID') }}.{{ kv('GCP_DATASET') }}.weather_data`
+      (
+          place STRING OPTIONS (description = 'The location where the weather data was recorded.'),
+          value FLOAT64 OPTIONS (description = 'The temperature value.'),
+          unit STRING OPTIONS (description = 'The measurement unit of the temperature.'),
+          recordTime DATETIME OPTIONS (description = 'The DATETIME when the weather data was recorded.')
+      )
+      PARTITION BY DATE(recordTime);
+
+  - id: load_weather_data
+    type: io.kestra.plugin.gcp.bigquery.Query
+    sql: |
+      CREATE OR REPLACE EXTERNAL TABLE `{{ kv('GCP_PROJECT_ID') }}.{{ render(vars.table) }}_ext`
+      (
+          place STRING,
+          value FLOAT64,
+          unit STRING,
+          recordTime DATETIME ,
+      )
+      OPTIONS (
+          format = 'CSV',
+          uris = ['{{ render(vars.gcs_file) }}'],
+          skip_leading_rows = 1,
+          ignore_unknown_values = TRUE
+      );
+
+  - id: merge_weather_data
+    type: io.kestra.plugin.gcp.bigquery.Query
+    sql: |
+      MERGE INTO `{{ kv('GCP_PROJECT_ID') }}.{{ kv('GCP_DATASET') }}.weather_data` T
+      USING `{{ kv('GCP_PROJECT_ID') }}.{{ render(vars.table) }}_ext` S
+      ON T.recordTime = S.recordTime AND T.place = S.place
+      WHEN NOT MATCHED THEN
+        INSERT (recordTime, place, value, unit)
+        VALUES (S.recordTime, S.place, S.value, S.unit);
+
+  - id: purge_files
+    type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
+    description: Purge temporary files after processing.
+    disabled: false
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{kv('GCP_CREDS')}}"
+      projectId: "{{ kv('GCP_PROJECT_ID') }}"
+      location: "{{ kv('GCP_LOCATION') }}"
+      bucket: "{{ kv('GCP_BUCKET_NAME') }}"
