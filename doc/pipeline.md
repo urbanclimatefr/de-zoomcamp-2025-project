@@ -100,6 +100,12 @@ This tasks creates weather table in Bigquery with the desired data schema.
 
 This task loads weather data from GCS to the created temporary weather table in BigQuery.
 
+**7. Merge weather data** 
+
+<img width="430" alt="image" src="https://github.com/user-attachments/assets/497fe2da-0dd2-4e0a-9eda-efe22c978f2d" />
+
+This task merges temporary weather table to the final destination weather_table
+<br>
 
 ## dbt data quality check
 
