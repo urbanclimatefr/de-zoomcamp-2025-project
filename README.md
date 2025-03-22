@@ -19,9 +19,7 @@ The goal of this project is to create a solution which consists an end-to-end ba
 
 **Hong Kong Observatory**'s [API Web Service](https://data.gov.hk/en-data/dataset/hk-hko-rss-current-weather-report/resource/923a02ae-4a14-4a28-8a2b-1215d3dff08f) provides various APIs where we can use to collect real time weather data.
 
-A list of office ids were previously obtained and hard-coded in the data collection Python script (see [weather_data_load.py](./src/weather_data_loader.py))
 
-For each office, we retrieve a list of weather station ids and for each station the Python script makes an API call to obtain current weather data.
 
 <br>
 
