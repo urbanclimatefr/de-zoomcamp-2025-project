@@ -123,6 +123,9 @@ This task merges temporary weather table to the final destination weather_table.
 
 This task purges temporary files after processing.
 
+<img width="1275" alt="image" src="https://github.com/user-attachments/assets/8c89d26a-e32d-42fa-b850-51f3af220ba2" />
+
+
 ## dbt data quality check
 
 <img width="557" alt="image" src="https://github.com/user-attachments/assets/ff08ae2b-a4c9-431f-9515-6e5a6ade70eb" />
