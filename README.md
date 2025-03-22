@@ -93,13 +93,4 @@ This includes building local Kestra image as well as running Kestra and Postgres
 - Documentation would probably takes as much time as development.
 
 
-<br>
 
-## How Is This Website Made?
-
-This website is powered by [Github Page](https://pages.github.com/).
-
-The theme is configured in [_config.yaml](./_config.yaml) file.
-
-
-<br>
