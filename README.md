@@ -44,22 +44,18 @@ The first dashboard in this page shows the number of records collected for the s
 The second dashboard shows the lowest, average and highest temperature for the selected station and date.
 
 <br>
-
-![data visualization 01](./docs/data_visualization_01.png)
-
+<img width="1177" alt="image" src="https://github.com/user-attachments/assets/1a99cb64-04d7-4b81-9c07-e28afbddbef9" />
 <br>
 
 Second page of the report shows the time series temperate data for the selected station and the date range.
 
 <br>
-
-
-![data visualization 02](./docs/data_visualization_02.png)
+<img width="1181" alt="image" src="https://github.com/user-attachments/assets/e2ab7d8c-ac92-4dcf-9bff-f65a9315e794" />
 
 <br>
 
 
-## Data Flow
+## Flowchart
 
 <br>
 
@@ -81,13 +77,6 @@ See [data pipelines](./docs/pipeline.md)
 
 Before we can execute the pipeline, we would first provision the infrastructure.
 
-**Infrastructure Provisioning**
-
-This includes building Cloud Storage bucket and BigQuery dataset using Terraform.
-
-
-[infrastructure](./docs/infra.md)
-
 
 **Docker Container Creation**
 
@@ -100,7 +89,6 @@ This includes building local Kestra image as well as running Kestra and Postgres
 
 ## Lessons Learned
 
-- Backfill is an important part of the design. Have to take this into consideration when designing the pipeline.
 - Deciding on data visualization earlier helps narrowing down the scope and the kind of processing needed for the pipeline. Working backward from the target end state is a useful way to keep things in check.
 - Documentation would probably takes as much time as development.
 
