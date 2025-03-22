@@ -130,11 +130,4 @@ A daily scheduled trigger is created to execute the pipeline. Trigger can also b
 ![mage trigger](./mage_trigger.png)
 
 
-<br>
-
-## Backfill
-
-See [backfill](./backfill.md) for detail explanation of how this solution handles backfilling.
-
-<br>
 
