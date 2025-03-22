@@ -111,7 +111,10 @@ This task loads weather data from GCS to the created temporary weather table in 
 
 <img width="430" alt="image" src="https://github.com/user-attachments/assets/497fe2da-0dd2-4e0a-9eda-efe22c978f2d" />
 
-This task merges temporary weather table to the final destination weather_table
+This task merges temporary weather table to the final destination weather_table.
+
+<img width="1258" alt="image" src="https://github.com/user-attachments/assets/ad8be7ef-d021-4629-9e12-25ebce4b2236" />
+
 <br>
 
 **9. Purge file** 
