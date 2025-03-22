@@ -39,34 +39,24 @@ The key value store is in namespaces zoomcamp.
 
 Kestra ETL workflow consists of total 9 blocks
 
-**1. Scheduling
+**1. Scheduling**
 
 <img width="272" alt="image" src="https://github.com/user-attachments/assets/9ae8f5ee-713b-4f69-9c7a-311e7e178c7c" />
 
 This schedules the workflow to run ETL job every hour.
 
 
-![mage block 1](./mage_block_1.png)
+<br>
+
+**2. Set label** 
+
+This set the label for this workflow
+<img width="248" alt="image" src="https://github.com/user-attachments/assets/a250f04e-aaa0-4cc3-9af1-70909ffdb53c" />
 
 
 <br>
 
-**2. cleaning and add transform** Transformer
-
-See [cleaning and add transform](../mage/data-engineering-zoomcamp-2024-project/transformers/cleaning_and_add__transform.py)
-
-
-Once the data is loaded into dataframe from the previous step, this transformer filters out rows which `temperature` field is null and adds 3 columns `date`, `hour` and `minute` using the value from `timestamp` column.
-
-The transformed dataframe is then subject to the tests specified under `@test` block where we verify that the 3 new columns are non-null.
-
-
-![mage block 2](./mage_block_2.png)
-
-
-<br>
-
-**3. remove duplicates** Transformer
+**3. Fetch data**
 
 See [remove duplicates](../mage/data-engineering-zoomcamp-2024-project/transformers/remove_duplicates.py)
 
