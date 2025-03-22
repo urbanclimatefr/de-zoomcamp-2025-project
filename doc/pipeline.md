@@ -15,7 +15,7 @@ There are two Kestra flows created for this project.
 
 **Create key value store in Kestra**
 
-This pipline is scheduled to run every hour on the dot. When it runs, it executes the [weather data loader](../src/weather_data_loader.py) Python script. The script has a list of hard-coded office ids. For each office id, script retrieves a list of weather station ids and make request to retrieve current weather data from National Weather Service for each station id.
+This workflow is designed to set key-value pairs in a key-value store, which can be used to store configuration data or secrets for a Google Cloud Platform (GCP) project.
 
 <img width="536" alt="image" src="https://github.com/user-attachments/assets/9f2ca265-b2ba-4ab6-a814-fdd26d571b03" />
 
