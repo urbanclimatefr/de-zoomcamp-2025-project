@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: your_source_name  # Replace with the name of your source
-    database: your_database # Replace with your database name (e.g., BigQuery project ID)
-    schema: your_schema     # Replace with your schema name (e.g., dataset name in BigQuery)
+  - name: zoomcamp_project  # Replace with the name of your source
+    database: zoomcamp-project-454404 
+    schema: weather_data    # Replace with your schema name (e.g., dataset name in BigQuery)
     tables:
       - name: weather_data  # The name of the source table
         columns:
