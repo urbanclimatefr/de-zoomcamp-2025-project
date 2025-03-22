@@ -37,14 +37,13 @@ The key value store is in namespaces zoomcamp.
 
 ## ETL with Kestra and data quality check with dbt
 
-Mage pipeline consists of total 5 blocks
+Kestra ETL workflow consists of total 9 blocks
 
-**1. ingest from cloud storage** Data Loader
+**1. Scheduling
 
-See [ingest from cloud storage](../mage/data-engineering-zoomcamp-2024-project/data_loaders/ingest_from_cloud_storage.py)
+<img width="272" alt="image" src="https://github.com/user-attachments/assets/9ae8f5ee-713b-4f69-9c7a-311e7e178c7c" />
 
-
-This data loader loads daily csv file from Cloud Storage bucket for the execution time. Execution time is provided by Mage and can be overrided during the [backfill](./backfill.md) process.
+This schedules the workflow to run ETL job every hour.
 
 
 ![mage block 1](./mage_block_1.png)
