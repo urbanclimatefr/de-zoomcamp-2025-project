@@ -59,7 +59,7 @@ Second page of the report shows the time series temperate data for the selected 
 
 <br>
 
-![data flow](./docs/data_flow.svg)
+![data flow](./doc/flowchart.svg)
 
 <br>
 
@@ -67,7 +67,7 @@ Second page of the report shows the time series temperate data for the selected 
 
 <br>
 
-See [data pipelines](./docs/pipeline.md)
+See [data pipelines](./doc/pipeline.md)
 
 <br>
 
@@ -83,7 +83,7 @@ Before we can execute the pipeline, we would first provision the infrastructure.
 This includes building local Kestra image as well as running Kestra and Postgres containers.
 
 
-[Kestra](./docs/Kestra.md)
+[Kestra](./doc/Kestra.md)
 
 <br>
 
