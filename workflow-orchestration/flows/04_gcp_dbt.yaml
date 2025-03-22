@@ -15,7 +15,7 @@ tasks:
     url: https://github.com/urbanclimatefr/de-zoomcamp-2025-project
     branch: main
     namespace: "{{flow.namespace}}"
-    gitDirectory: workflow-orchestration/dbt
+    gitDirectory: workflow-orchestration/data_build_tool
     dryRun: false
     # disabled: true # this Git Sync is needed only when running it the first time, afterwards the task can be disabled
 
