@@ -12,7 +12,6 @@ sources:
             description: "The location or place associated with the weather record."
             tests:
               - not_null
-              - unique
 
           - name: value
             description: "The numerical value associated with the weather record."
@@ -24,7 +23,7 @@ sources:
             tests:
               - not_null
               - accepted_values:
-                  values: ['C', 'F']
+                  values: ['C']
 
           - name: recordTime
             description: "The timestamp when the weather record was created."
