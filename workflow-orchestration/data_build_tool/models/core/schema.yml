@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: zoomcamp_project  # Replace with the name of your source
-    database: zoomcamp-project-454404 
+  - name: zoomcamp-project-454404 # Replace with the name of your source
+    database: zoomcamp
     schema: weather_data    # Replace with your schema name (e.g., dataset name in BigQuery)
     tables:
       - name: weather_data  # The name of the source table
