@@ -28,11 +28,9 @@ The key value store is in namespaces zoomcamp.
 
 <br>
 
-**Create Daily**
+**Set up in GCP**
 
-This pipline is scheduled to run every day 10 mins before midnight. When it runs, it execute the [transform.py](../src/transform.py) Python script. The script is fetching all the json files from the Cloud Storage bucket based on the provided `execution date`.
-
-When pipeline is a scheduled job, the `execution date` is the current date. When pipeline is kicked off manually, user can enter a particular date as the `execution date`. This would be the backfill scenario.
+This workflow is designed to set up resources on Google Cloud Platform (GCP) using Kestra, an orchestration and scheduling platform
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/080b7615-c89e-4e88-9784-8ab227b6cc82" />
 
