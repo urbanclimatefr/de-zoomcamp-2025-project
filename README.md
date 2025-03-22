@@ -77,13 +77,6 @@ See [data pipelines](./docs/pipeline.md)
 
 Before we can execute the pipeline, we would first provision the infrastructure.
 
-**Infrastructure Provisioning**
-
-This includes building Cloud Storage bucket and BigQuery dataset using Terraform.
-
-
-[infrastructure](./docs/infra.md)
-
 
 **Docker Container Creation**
 
