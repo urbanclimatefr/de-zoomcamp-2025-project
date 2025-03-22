@@ -34,7 +34,8 @@ This pipline is scheduled to run every day 10 mins before midnight. When it runs
 
 When pipeline is a scheduled job, the `execution date` is the current date. When pipeline is kicked off manually, user can enter a particular date as the `execution date`. This would be the backfill scenario.
 
-![github create daily](./github_create_daily.png)
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/080b7615-c89e-4e88-9784-8ab227b6cc82" />
+
 
 The downloaded json files will be aggregated together. A transformation process is applied to extract interesting fields and produces a new output object in csv format.
 
