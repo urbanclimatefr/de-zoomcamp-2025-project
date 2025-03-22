@@ -83,7 +83,7 @@ Before we can execute the pipeline, we would first provision the infrastructure.
 This includes building local Kestra image as well as running Kestra and Postgres containers.
 
 
-[Kestra](./doc/Kestra.md)
+[Kestra](./doc/kestra.md)
 
 <br>
 
