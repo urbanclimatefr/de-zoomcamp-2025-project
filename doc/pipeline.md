@@ -11,7 +11,7 @@ The first 2 pipeline pieces are created by using Kestra flows to set up the infr
 
 ## Infrastructure pipelines
 
-There are two Github Kestra flows created for this project.
+There are two Kestra flows created for this project.
 
 **Fetch Data**
 
