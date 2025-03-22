@@ -59,7 +59,7 @@ Second page of the report shows the time series temperate data for the selected 
 
 <br>
 
-![data flow](./docs/data_flow.svg)
+![data flow](./docs/flowchart.svg)
 
 <br>
 
