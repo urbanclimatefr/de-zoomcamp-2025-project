@@ -71,11 +71,10 @@ This task fetches data by using HTTP Get method.
 This uses Python to run the transform script to change json output to csv output with desired columns: place, value, unit, recordTime.
 
 
-![mage block 4](./mage_block_4.png)
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/2b47e045-06e2-4918-8cdc-ad9459d132bc" />
+
 
 <br>
-
-![bigquery table](./bigquery_table.png)
 
 <br>
 
