@@ -2,11 +2,11 @@
 
 ## Overview
 
-This document describes the pipelines and triggers implemented for this project. A link to the backfill process is provided at the ned.
+This document describes the pipelines and triggers implemented for this project.
 
-The end-to-end data batch processing pipeline consists of two pieces.
+The end-to-end data batch processing pipeline consists of 4 pieces.
 
-The first pipeline piece is created by using Github Pipeline and second piece is created by using Mage pipeline.
+The first 2 pipeline pieces are created by using Kestra flows to set up the infrastructure and other 2 pieces are created by using Kestra flow to extract, transform and load the data into GCS and Bigquery, as well as having data quality check using dbt.
 
 
 ## Github Pipelines
