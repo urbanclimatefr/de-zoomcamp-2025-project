@@ -25,6 +25,11 @@ The key value store is in namespaces zoomcamp.
 <img width="1217" alt="image" src="https://github.com/user-attachments/assets/21809b06-c4d9-4592-88f1-1b5a25fd5bc4" />
 
 
+ **Set up in GCP**
+
+ This workflow is designed to set up resources on Google Cloud Platform (GCP) using Kestra, an orchestration and scheduling platform
+ 
+ <img width="400" alt="image" src="https://github.com/user-attachments/assets/080b7615-c89e-4e88-9784-8ab227b6cc82" />
 
 <br>
 
