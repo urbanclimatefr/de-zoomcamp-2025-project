@@ -84,6 +84,10 @@ This uses Python to run the transform script to change json output to csv output
 
 This task uploads the transformed csv data output to the GCS bucket.
 
+<img width="1271" alt="image" src="https://github.com/user-attachments/assets/56a5c317-096a-43e8-9b88-b5aa25df487e" />
+
+
+
 <br>
 
 **6. Create weather table** 
