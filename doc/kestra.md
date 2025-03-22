@@ -51,7 +51,7 @@ kestra-1    |
 
 ```
 
-
+```
 ## docker ps output
 
 CONTAINER ID   IMAGE                  COMMAND                  CREATED              STATUS                        PORTS                              NAMES
