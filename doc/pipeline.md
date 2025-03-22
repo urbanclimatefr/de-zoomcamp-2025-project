@@ -9,9 +9,9 @@ The end-to-end data batch processing pipeline consists of 4 pieces.
 The first 2 pipeline pieces are created by using Kestra flows to set up the infrastructure and other 2 pieces are created by using Kestra flow to extract, transform and load the data into GCS and Bigquery, as well as having data quality check using dbt.
 
 
-## Github Pipelines
+## Infrastructure pipelines
 
-There are two Github pipeline jobs created for this project.
+There are two Github Kestra flows created for this project.
 
 **Fetch Data**
 
