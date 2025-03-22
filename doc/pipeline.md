@@ -101,12 +101,7 @@ This tasks creates weather table in Bigquery with the desired data schema.
 This task loads weather data from GCS to the created temporary weather table in BigQuery.
 
 
-## Mage Pipeline Trigger
-
-A daily scheduled trigger is created to execute the pipeline. Trigger can also be triggered manually.
-
-
-![mage trigger](./mage_trigger.png)
+## dbt data quality check
 
 
 
