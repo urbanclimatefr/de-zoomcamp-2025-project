@@ -50,7 +50,8 @@ This schedules the workflow to run ETL job every hour.
 
 **2. Set label** 
 
-This set the label for this workflow
+This set the label for this workflow.
+
 <img width="248" alt="image" src="https://github.com/user-attachments/assets/a250f04e-aaa0-4cc3-9af1-70909ffdb53c" />
 
 
@@ -58,14 +59,9 @@ This set the label for this workflow
 
 **3. Fetch data**
 
-See [remove duplicates](../mage/data-engineering-zoomcamp-2024-project/transformers/remove_duplicates.py)
+<img width="470" alt="image" src="https://github.com/user-attachments/assets/27e46962-8072-4fc0-b5bf-3d216df4889f" />
 
-The transformer is checking duplicate rows based on the combination of `stationId`, `date`, `hour` and `minute` columns and keeps the last record.
-
-Under the `@test` block we verify that the output dataframe is non-null.
-
-
-![mage block 3](./mage_block_3.png)
+This task fetches data by using HTTP Get method.
 
 <br>
 
