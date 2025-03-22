@@ -89,7 +89,6 @@ This includes building local Kestra image as well as running Kestra and Postgres
 
 ## Lessons Learned
 
-- Backfill is an important part of the design. Have to take this into consideration when designing the pipeline.
 - Deciding on data visualization earlier helps narrowing down the scope and the kind of processing needed for the pipeline. Working backward from the target end state is a useful way to keep things in check.
 - Documentation would probably takes as much time as development.
 
