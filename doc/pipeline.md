@@ -28,23 +28,9 @@ The key value store is in namespaces zoomcamp.
 
 <br>
 
-**Set up in GCP**
-
-This workflow is designed to set up resources on Google Cloud Platform (GCP) using Kestra, an orchestration and scheduling platform
-
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/080b7615-c89e-4e88-9784-8ab227b6cc82" />
-
-
-The downloaded json files will be aggregated together. A transformation process is applied to extract interesting fields and produces a new output object in csv format.
-
-For each execution date, one single csv file will be created and uploaded back to Cloud Storage bucket under the `daily` prefix and paritioned by year, month and day.
-
-![storage daily](./storage_daily.png)
-
-
 <br>
 
-## Mage Pipelines
+## ETL with Kestra and data quality check with dbt
 
 Mage pipeline consists of total 5 blocks
 
