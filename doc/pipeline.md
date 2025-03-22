@@ -13,11 +13,12 @@ The first 2 pipeline pieces are created by using Kestra flows to set up the infr
 
 There are two Kestra flows created for this project.
 
-**Fetch Data**
+**Create key value store in Kestra**
 
 This pipline is scheduled to run every hour on the dot. When it runs, it executes the [weather data loader](../src/weather_data_loader.py) Python script. The script has a list of hard-coded office ids. For each office id, script retrieves a list of weather station ids and make request to retrieve current weather data from National Weather Service for each station id.
 
-![github fetch data](./github_fetch_data.png)
+<img width="536" alt="image" src="https://github.com/user-attachments/assets/9f2ca265-b2ba-4ab6-a814-fdd26d571b03" />
+
 
 
 The fetched data will be finally stored as json file in Gloud Storage bucket named `data-engineering-zoomcamp-2024-project` and under the `raw` prefix indicating this is the raw data we collected.
